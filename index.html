@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استراحتي - تطبيقك الأول لحجز الاستراحات</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animate On Scroll Library (للتأثيرات الحركية ) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Alpine.js (لتفاعلية قسم الأسئلة الشائعة ) -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body { font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; }
+        /* لإخفاء شريط التمرير مع الحفاظ على وظيفته */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- ===== START: Navbar (شريط التنقل المضاف ) ===== -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">استراحتي</a>
+            <div class="hidden md:flex space-x-8 space-x-reverse items-center">
+                <a href="#features" class="text-gray-600 hover:text-indigo-600">الميزات</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-indigo-600">كيف يعمل</a>
+                <a href="#faq" class="text-gray-600 hover:text-indigo-600">الأسئلة الشائعة</a>
+            </div>
+            <a href="#download" class="hidden md:block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
+                تحميل التطبيق
+            </a>
+        </nav>
+    </header>
+
+    <!-- Professional Hero Section -->
+    <div id="download" class="relative bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <polygon points="50,0 100,0 50,100 0,100" />
+                </svg>
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-right">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block">استراحتك المثالية</span>
+                            <span class="block text-indigo-600">على بعد نقرة واحدة</span>
+                        </h1>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            تطبيق "استراحتي" هو دليلك الشامل للعثور على أفضل الاستراحات والشاليهات وحجزها بكل سهولة وأمان. ابدأ رحلتك نحو الاسترخاء اليوم.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                                    حمّل على App Store
+                                </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:mr-3">
+                                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                                    احصل عليه من Google Play
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
+            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070&auto=format&fit=crop" alt="استراحة فاخرة مع مسبح">
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center" data-aos="fade-up">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">ميزاتنا</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    كل ما تحتاجه لحجز استراحتك
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    صممنا تطبيق "استراحتي" ليكون رفيقك المثالي في البحث عن الراحة والاستجمام.
+                </p>
+            </div>
+            <div class="mt-12">
+                <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+                    <div class="relative" data-aos="fade-up" data-aos-delay="100">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            </div>
+                            <p class="mr-16 text-lg leading-6 font-medium text-gray-900">بحث متقدم وسهل</p>
+                        </dt>
+                        <dd class="mt-2 mr-16 text-base text-gray-500">ابحث بالخريطة، السعر، المرافق، أو نوع المناسبة. اعثر على ما يناسبك بالضبط في ثوانٍ.</dd>
+                    </div>
+                    <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                            </div>
+                            <p class="mr-16 text-lg leading-6 font-medium text-gray-900">حجز فوري ومؤكد</p>
+                        </dt>
+                        <dd class="mt-2 mr-16 text-base text-gray-500">لا داعي للانتظار. تصفح التواريخ المتاحة واحجز استراحتك فورًا بضغطة زر.</dd>
+                    </div>
+                    <div class="relative" data-aos="fade-up" data-aos-delay="300">
+                        <dt>
+                            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 20.917l9 3 9-3a12.02 12.02 0 00-2.382-9.971z" /></svg>
+                            </div>
+                            <p class="mr-16 text-lg leading-6 font-medium text-gray-900">دفع آمن وموثوق</p>
+                        </dt>
+                        <dd class="mt-2 mr-16 text-base text-gray-500">نوفر لك بوابات دفع آمنة ومتعددة لضمان حماية معاملاتك المالية وراحة بالك.</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div id="how-it-works" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center" data-aos="fade-up">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">3 خطوات فقط</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    كيف يعمل التطبيق؟
+                </p>
+            </div>
+            <div class="mt-12 grid gap-10 md:grid-cols-3">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900">ابحث وتصفح</h3>
+                    <p class="mt-2 text-base text-gray-500">استخدم فلاتر البحث الذكية للعثور على الاستراحة التي تناسب احتياجاتك وميزانيتك.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900">اختر واحجز</h3>
+                    <p class="mt-2 text-base text-gray-500">شاهد الصور والتفاصيل، تحقق من التواريخ المتاحة، وقم بتأكيد حجزك مباشرة.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900">استمتع بوقتك</h3>
+                    <p class="mt-2 text-base text-gray-500">وصلتك رسالة تأكيد الحجز؟ كل شيء جاهز! استعد لقضاء وقت ممتع في استراحتك.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screenshots Section -->
+    <div class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    شاهد التطبيق من الداخل
+                </h2>
+                <p class="mt-4 text-lg text-gray-500">
+                    تجربة مستخدم سلسة ومصممة بعناية لتلبية كل احتياجاتك.
+                </p>
+            </div>
+            <div class="mt-12">
+                <div class="relative">
+                    <div class="flex overflow-x-auto space-x-reverse space-x-8 pb-4 no-scrollbar">
+                        <!-- استبدل '#' بروابط صور تطبيقك -->
+                        <div class="flex-shrink-0 w-64 p-2 bg-gray-200 rounded-lg shadow-lg"><img src="https://placehold.co/300x600/e2e8f0/4a5568?text=الصفحة+الرئيسية" alt="App Screenshot 1" class="rounded-md"></div>
+                        <div class="flex-shrink-0 w-64 p-2 bg-gray-200 rounded-lg shadow-lg"><img src="https://placehold.co/300x600/e2e8f0/4a5568?text=صفحة+البحث" alt="App Screenshot 2" class="rounded-md"></div>
+                        <div class="flex-shrink-0 w-64 p-2 bg-gray-200 rounded-lg shadow-lg"><img src="https://placehold.co/300x600/e2e8f0/4a5568?text=تفاصيل+الاستراحة" alt="App Screenshot 3" class="rounded-md"></div>
+                        <div class="flex-shrink-0 w-64 p-2 bg-gray-200 rounded-lg shadow-lg"><img src="https://placehold.co/300x600/e2e8f0/4a5568?text=صفحة+الحجز" alt="App Screenshot 4" class="rounded-md"></div>
+                        <div class="flex-shrink-0 w-64 p-2 bg-gray-200 rounded-lg shadow-lg"><img src="https://placehold.co/300x600/e2e8f0/4a5568?text=ملف+المستخدم" alt="App Screenshot 5" class="rounded-md"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== START: FAQ Section (قسم الأسئلة الشائعة المضاف ) ===== -->
+    <div id="faq" class="bg-gray-50 py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+            <h2 class="text-3xl font-extrabold text-center text-gray-900">الأسئلة الشائعة</h2>
+            <div class="mt-8 space-y-4" x-data="{ open: 1 }">
+                <!-- Question 1 -->
+                <div class="border-b border-gray-200 pb-4">
+                    <button @click="open = (open === 1 ? 0 : 1)" class="w-full flex justify-between items-center text-right">
+                        <span class="text-lg font-medium text-gray-900">كيف يمكنني حجز استراحة؟</span>
+                        <svg class="h-6 w-6 text-gray-500 transform transition-transform" :class="{ 'rotate-180': open === 1 }" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div x-show="open === 1" x-transition class="mt-2 text-gray-600">
+                        <p>الأمر بسيط! تصفح الاستراحات المتاحة، اختر التي تناسبك، حدد التواريخ المطلوبة، ثم اتبع خطوات تأكيد الحجز والدفع.</p>
+                    </div>
+                </div>
+                <!-- Question 2 -->
+                <div class="border-b border-gray-200 pb-4">
+                    <button @click="open = (open === 2 ? 0 : 2)" class="w-full flex justify-between items-center text-right">
+                        <span class="text-lg font-medium text-gray-900">هل الدفع عبر التطبيق آمن؟</span>
+                        <svg class="h-6 w-6 text-gray-500 transform transition-transform" :class="{ 'rotate-180': open === 2 }" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div x-show="open === 2" x-transition class="mt-2 text-gray-600">
+                        <p>نعم بالتأكيد. نحن نستخدم بوابات دفع إلكترونية مشفرة تتبع أعلى معايير الأمان العالمية لحماية بياناتك المالية.</p>
+                    </div>
+                </div>
+                <!-- Question 3 -->
+                <div class="border-b border-gray-200 pb-4">
+                    <button @click="open = (open === 3 ? 0 : 3)" class="w-full flex justify-between items-center text-right">
+                        <span class="text-lg font-medium text-gray-900">ما هي سياسة الإلغاء؟</span>
+                        <svg class="h-6 w-6 text-gray-500 transform transition-transform" :class="{ 'rotate-180': open === 3 }" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div x-show="open === 3" x-transition class="mt-2 text-gray-600">
+                        <p>تختلف سياسة الإلغاء من استراحة لأخرى. يمكنك الاطلاع على سياسة الإلغاء الخاصة بكل استراحة في صفحة التفاصيل الخاصة بها قبل إتمام الحجز.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== END: FAQ Section ===== -->
+
+    <!-- ===== START: Footer (التذييل المطور) ===== -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold text-indigo-600">استراحتي</h3>
+                    <p class="text-gray-500">رفيقك الأول لحجز أفضل الاستراحات والشاليهات بسهولة وأمان.</p>
+                </div>
+                <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-900 tracking-wider uppercase">روابط سريعة</h4>
+                        <ul class="mt-4 space-y-4">
+                            <li><a href="#features" class="text-base text-gray-500 hover:text-gray-900">الميزات</a></li>
+                            <li><a href="#how-it-works" class="text-base text-gray-500 hover:text-gray-900">كيف يعمل</a></li>
+                            <li><a href="#faq" class="text-base text-gray-500 hover:text-gray-900">الأسئلة الشائعة</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-900 tracking-wider uppercase">قانوني</h4>
+                        <ul class="mt-4 space-y-4">
+                            <li><a href="privacy.html" class="text-base text-gray-500 hover:text-gray-900">سياسة الخصوصية</a></li>
+                            <li><a href="terms.html" class="text-base text-gray-500 hover:text-gray-900">شروط الاستخدام</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-gray-900 tracking-wider uppercase">تواصل معنا</h4>
+                        <ul class="mt-4 space-y-4">
+                            <!-- أضف روابط حساباتك هنا -->
+                            <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">تويتر</a></li>
+                            <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">انستغرام</a></li>
+                            <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">فيسبوك</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8 text-center">
+                <p class="text-base text-gray-400">&copy; 2026 استراحتي. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ===== END: Footer ===== -->
+
+    <!-- AOS Animate On Scroll Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // مدة الحركة بالمللي ثانية
+            once: true, // لتشغيل الحركة مرة واحدة فقط
+        } );
+    </script>
+
+</body>
+</html>

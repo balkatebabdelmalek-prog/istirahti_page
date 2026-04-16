@@ -1,0 +1,64 @@
+/* style.css */
+body {
+    font-family: 'Cairo', sans-serif; /* خط عربي جميل وحديث */
+    margin: 0;
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop' );
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    height: 100vh; /* يجعل القسم يملأ الشاشة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.download-buttons .btn {
+    text-decoration: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* مسافة بين الأيقونة والنص */
+}
+
+.download-buttons .btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-apple {
+    background-color: #007AFF; /* لون أبل الأزرق */
+}
+
+.btn-google {
+    background-color: #3DDC84; /* لون جوجل بلاي الأخضر */
+}
+
+/* إضافة خط Cairo من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap' );
